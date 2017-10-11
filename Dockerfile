@@ -1,5 +1,5 @@
 # Jenkins comes with JDK8
-FROM java:8
+FROM openjdk:8-jdk-alpine
 
 # Set desired Android Linux SDK version
 ENV ANDROID_SDK_VERSION 24.4.1
