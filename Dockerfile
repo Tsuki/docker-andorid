@@ -2,6 +2,7 @@
 FROM openjdk:8-jdk-alpine
 
 # Set desired Node JS version
+ENV YARN_VERSION    1.1.0
 ENV NODE_VERSION    8.6.0
 ENV SDK_VERSION     25.2.3
 ENV SDK_CHECKSUM    1b35bcb94e9a686dff6460c8bca903aa0281c6696001067f34ec00093145b560
@@ -75,9 +76,7 @@ RUN addgroup -g 1000 node \
     && cd .. \
     && rm -Rf "node-v$NODE_VERSION" \
     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt
-
-ENV YARN_VERSION 1.1.0
-
+    
 RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
   && for key in \
     6A010C5166006599AA17F08146C2130DFD2497F5 \
