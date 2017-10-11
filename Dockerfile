@@ -1,6 +1,8 @@
 # Jenkins comes with JDK8
 FROM openjdk:8-jdk-alpine
 
+# Set desired Node JS version
+ENV NODE_VERSION 8
 # Set desired Android Linux SDK version
 ENV ANDROID_SDK_VERSION 24.4.1
 
@@ -47,6 +49,9 @@ RUN apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 zlib1g:i386 -y
 RUN mkdir "$ANDROID_HOME/licenses" || true
 RUN echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
 RUN echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
+
+# install node
+RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash 
 
 # Cleanup
 RUN apt-get clean
