@@ -8,7 +8,7 @@ ENV SDK_CHECKSUM    1b35bcb94e9a686dff6460c8bca903aa0281c6696001067f34ec00093145
 ENV ANDROID_HOME    /opt/android-sdk
 ENV SDK_UPDATE      tools,platform-tools,platform-tools,android-23,build-tools-23.0.3,android-24,build-tools-24.0.1
 ENV LD_LIBRARY_PATH ${ANDROID_HOME}/tools/lib64/qt:${ANDROID_HOME}/tools/lib/libQt5:$LD_LIBRARY_PATH/
-ENV GRADLE_VERSION  2.13
+ENV GRADLE_VERSION  3.0
 ENV GRADLE_HOME     /opt/gradle-${GRADLE_VERSION}
 ENV PATH            ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${GRADLE_HOME}/bin
 
